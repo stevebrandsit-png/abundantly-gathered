@@ -4,6 +4,7 @@ import "./globals.css";
 
 // 1. The Component Imports (Notice there are no curly braces around Navbar or Footer)
 import Navbar from "@/components/Navbar";
+import CartDrawer from "@/components/CartDrawer";
 import Footer from "@/components/Footer";
 
 // 2. The Font Configurations
@@ -26,6 +27,14 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.variable} ${playfair.variable} font-sans flex flex-col min-h-screen`}>
         <Navbar />
+        <body className={`${inter.variable} ${playfair.variable} font-sans bg-background text-text-main antialiased flex flex-col min-h-screen`}>
+  <Navbar />
+  <CartDrawer />
+  <main className="flex-grow">
+    {children}
+  </main>
+  <Footer />
+</body>
         
         <main className="flex-grow">
           {children}
