@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useCartStore } from "@/store/useCartStore";
 
@@ -11,30 +12,41 @@ export default function Navbar() {
     <nav className="sticky top-0 z-50 w-full bg-[#fdfbf7] border-b border-[#e0dcd3] shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
-          
           {/* Logo / Brand Name */}
-          <Link href="/" className="font-serif text-2xl font-semibold text-[#8C673F]">
-            Abundantly Gathered
+          <Link href="/" className="flex items-center justify-center">
+            <Image
+              src="/logo-desktop.svg"
+              alt="Abundantly Gathered Logo"
+              width={280}
+              height={100}
+              priority
+              className="object-contain"
+            />
           </Link>
 
           {/* Navigation Links & Cart Button */}
           <div className="flex items-center space-x-8">
-            <Link href="/" className="text-[#7D7166] hover:text-[#8C673F] font-medium transition-colors">
+            <Link
+              href="/"
+              className="text-[#7D7166] hover:text-[#8C673F] font-medium transition-colors"
+            >
               Home
             </Link>
-            <Link href="/about" className="text-[#7D7166] hover:text-[#8C673F] font-medium transition-colors">
+            <Link
+              href="/about"
+              className="text-[#7D7166] hover:text-[#8C673F] font-medium transition-colors"
+            >
               About
             </Link>
-            
+
             {/* The Cart Button with the onClick trigger */}
-            <button 
+            <button
               onClick={openCart}
               className="text-[#7D7166] hover:text-[#8C673F] font-medium transition-colors duration-200 cursor-pointer"
             >
               Cart ({cart?.length || 0} Boxes)
             </button>
           </div>
-
         </div>
       </div>
     </nav>
