@@ -23,25 +23,17 @@ export const metadata: Metadata = {
 // 4. The Master Layout Wrapper
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en">
       <body
-        className={`${inter.variable} ${playfair.variable} font-sans flex flex-col min-h-screen`}
+        className={`${inter.variable} ${playfair.variable} font-sans bg-background text-text-main antialiased flex flex-col min-h-screen`}
       >
         <Navbar />
-        <body
-          className={`${inter.variable} ${playfair.variable} font-sans bg-background text-text-main antialiased flex flex-col min-h-screen`}
-        >
-          <CartDrawer />
-          <main className="flex-grow">{children}</main>
-          <Footer />
-        </body>
-
+        <CartDrawer />
         <main className="flex-grow">{children}</main>
-
         <Footer />
       </body>
     </html>
