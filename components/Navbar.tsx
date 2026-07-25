@@ -10,17 +10,17 @@ export default function Navbar() {
 
   return (
     <nav className="sticky top-0 z-50 w-full bg-[#fdfbf7] border-b border-[#e0dcd3] shadow-sm">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-6">
+        <div className="flex justify-between items-center py-6">
           {/* Logo / Brand Name */}
           <Link href="/" className="flex items-center justify-center">
             <Image
               src="/logo-desktop.svg"
               alt="Abundantly Gathered Logo"
-              width={280}
-              height={100}
+              width={400}
+              height={200}
               priority
-              className="object-contain"
+              className="w-auto h-24 md:h-32 lg:h-40 object-contain"
             />
           </Link>
 
