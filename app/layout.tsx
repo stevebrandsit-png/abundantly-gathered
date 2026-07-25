@@ -9,7 +9,10 @@ import Footer from "@/components/Footer";
 
 // 2. The Font Configurations
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
-const playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-playfair" });
+const playfair = Playfair_Display({
+  subsets: ["latin"],
+  variable: "--font-playfair",
+});
 
 // 3. The SEO Metadata
 export const metadata: Metadata = {
@@ -25,20 +28,19 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${playfair.variable} font-sans flex flex-col min-h-screen`}>
+      <body
+        className={`${inter.variable} ${playfair.variable} font-sans flex flex-col min-h-screen`}
+      >
         <Navbar />
-        <body className={`${inter.variable} ${playfair.variable} font-sans bg-background text-text-main antialiased flex flex-col min-h-screen`}>
-  <Navbar />
-  <CartDrawer />
-  <main className="flex-grow">
-    {children}
-  </main>
-  <Footer />
-</body>
-        
-        <main className="flex-grow">
-          {children}
-        </main>
+        <body
+          className={`${inter.variable} ${playfair.variable} font-sans bg-background text-text-main antialiased flex flex-col min-h-screen`}
+        >
+          <CartDrawer />
+          <main className="flex-grow">{children}</main>
+          <Footer />
+        </body>
+
+        <main className="flex-grow">{children}</main>
 
         <Footer />
       </body>
