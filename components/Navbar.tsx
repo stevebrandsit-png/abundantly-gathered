@@ -12,8 +12,8 @@ export default function Navbar() {
   return (
     <nav className="sticky top-0 z-50 w-full bg-primary shadow-md border-b border-primary-hover">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* MAIN HEADER ROW */}
-        <div className="relative flex justify-between items-center py-4 lg:py-6">
+        {/* 1. THE PADDING FIX: Changed mobile padding from py-4 to py-2. Desktop stays at lg:py-6 */}
+        <div className="relative flex justify-between items-center py-2 lg:py-6">
           {/* LEFT: Logo (Desktop & Mobile) */}
           <Link href="/" className="flex items-center justify-start z-10">
             <Image
@@ -22,8 +22,8 @@ export default function Navbar() {
               width={400}
               height={180}
               priority
-              // Upgraded desktop size to lg:h-40 for maximum brand authority
-              className="w-auto h-16 lg:h-40 object-contain drop-shadow-[0_2px_2px_rgba(62,39,35,0.6)]"
+              // 2. THE SCALE FIX: Bumped mobile height from h-16 to h-24 to make it pop.
+              className="w-auto h-24 lg:h-40 object-contain drop-shadow-[0_2px_2px_rgba(62,39,35,0.6)]"
             />
           </Link>
 
